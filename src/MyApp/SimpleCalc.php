@@ -1,5 +1,5 @@
 <?php
-namespace Sample1;
+namespace MyApp;
 
 class SimpleCalc  
 {
@@ -40,6 +40,11 @@ class SimpleCalc
   public function show()
   {
     echo $this->number . PHP_EOL;
+  }
+
+  public function reset()
+  {
+    $this->number = 0;
   }
 }
 

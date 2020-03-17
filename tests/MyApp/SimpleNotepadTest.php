@@ -1,5 +1,5 @@
 <?php
-namespace Sample1;
+namespace MyApp;
 
 use PHPUnit\Framework\TestCase;
 
@@ -13,6 +13,7 @@ class SimpleNotepadTest extends TestCase
         $this->sut->add("have");
         $this->sut->add("a");
         $this->sut->add("pen");
+        
     }
 
     /** @test */
@@ -67,4 +68,11 @@ class SimpleNotepadTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
     
+    public function test_reset()
+    {
+        $expected = [];
+        $this->sut->reset();
+        $actual = $this->sut->buffer;
+        $this->assertEquals($expected, $actual);
+    }
 }

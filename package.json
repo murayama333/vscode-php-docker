@@ -1,0 +1,28 @@
+{
+  "name": "vscode-php-docker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "watch": "^1.0.2"
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit tests --color",
+    "test:watch": "watch 'npm run test' . --ignoreDotFiles --interval=1",
+    "test:init": "composer install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/murayama333/vscode-php-docker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/murayama333/vscode-php-docker/issues"
+  },
+  "homepage": "https://github.com/murayama333/vscode-php-docker#readme"
+}

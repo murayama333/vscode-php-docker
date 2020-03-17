@@ -1,5 +1,5 @@
 <?php
-namespace Sample1;
+namespace MyApp;
 
 use PHPUnit\Framework\TestCase;
 
@@ -71,4 +71,13 @@ class SimpleCalcTest extends TestCase
     $this->expectOutputString($expected);
     $this->sut->show();
   }
+
+  public function test_reset()
+  {
+    $expected = 0;
+    $this->sut->reset();
+    $actual = $this->sut->getNumber();
+    $this->assertEquals($expected, $actual);
+  }
+
 }

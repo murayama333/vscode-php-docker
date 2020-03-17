@@ -4,7 +4,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Sample1\\": "src/"
+            "MyApp\\": "src/MyApp"
         }
     }
 }

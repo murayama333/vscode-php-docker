@@ -1,5 +1,5 @@
 <?php
-namespace Sample1;
+namespace MyApp;
 
 class SimpleNotepad
 {
@@ -31,5 +31,10 @@ class SimpleNotepad
   public function setPeriod($period)
   {
     $this->period = $period;
+  }
+
+  public function reset()
+  {
+    $this->buffer = [];
   }
 }

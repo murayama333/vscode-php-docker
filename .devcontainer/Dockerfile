@@ -21,7 +21,9 @@ RUN apt-get update \
     && apt-get -y install --no-install-recommends apt-utils dialog 2>&1 \
     #
     # install git iproute2, procps, lsb-release (useful for CLI installs)
-    && apt-get -y install git openssh-client less iproute2 procps iproute2 lsb-release zip unzip\
+    && apt-get -y install git openssh-client less iproute2 procps iproute2 lsb-release zip unzip nodejs npm\
+    && npm install n -g \
+    && n stable \
     #
     # Install xdebug
     && yes | pecl install xdebug \
@@ -38,6 +40,7 @@ RUN apt-get update \
     && chmod 0440 /etc/sudoers.d/$USERNAME \
     #
     # Clean up
+    && apt purge nodejs npm -y \
     && apt-get autoremove -y \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
@@ -46,4 +49,3 @@ RUN apt-get update \
 ENV DEBIAN_FRONTEND=dialog
 
 COPY --from=composer /usr/bin/composer /usr/bin/composer
-
